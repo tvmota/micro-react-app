@@ -18,6 +18,8 @@ const LoginForm = () => {
 
     if (frmField.checkValidity()) {
       sessionStorage.setItem('token', 'token');
+      localStorage.setItem('fromLogin', JSON.stringify({ item: 'fromLogin' }));
+      sessionStorage.setItem('fromLogin', JSON.stringify({ item: 'fromLogin' }));
       window.history.pushState(null, null, '/app1');
     } else {
       Array.from(frmField.elements).forEach((input) => {
